@@ -108,7 +108,7 @@ function connectSocket() {
         duration: 10000
     }).showToast();
 
-    socket = new WebSocket('ws://' + baseurl + '/api/ws');
+    socket = new WebSocket('wss://' + baseurl + '/api/ws');
 
     socket.onopen = function () {
         Toastify({
