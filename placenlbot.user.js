@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PlaceNL Bot
-// @namespace    https://github.com/PlaceNL/Bot
-// @version      14
+// @namespace    https://github.com/DeveloperTK/place
+// @version      15
 // @description  De bot voor PlaceNL!
 // @author       NoahvdAa
 // @match        https://www.reddit.com/r/place/*
@@ -132,7 +132,7 @@ function connectSocket() {
                     text: `Nieuwe map laden (reden: ${data.reason ? data.reason : 'verbonden met server'})...`,
                     duration: 10000
                 }).showToast();
-                currentOrderCtx = await getCanvasFromUrl(`http://${baseurl}/maps/${data.data}`, currentOrderCanvas);
+                currentOrderCtx = await getCanvasFromUrl(`https://${baseurl}/maps/${data.data}`, currentOrderCanvas);
                 order = getRealWork(currentOrderCtx.getImageData(0, 0, 2000, 1000).data);
                 Toastify({
                     text: `Nieuwe map geladen, ${order.length} pixels in totaal`,
